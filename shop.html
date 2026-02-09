@@ -21,32 +21,47 @@
 
     <section class="shop">
         <h2>All Sarees</h2>
-       <div class="products">
-    <div class="product">
-        <img src="images/saree1.jpg" alt="Saree 1">
-        <h3>Elegant Silk Saree</h3>
-        <p>₹2500</p>
-        <a href="product1.html" class="btn">View</a>
-        <button onclick="addToCart('Elegant Silk Saree', 2500)" style="margin-top:8px; background:#8e44ad; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">
-            Add to Cart
-        </button>
-    </div>
-    
-    <div class="product">
-        <img src="images/saree2.jpg" alt="Saree 2">
-        <h3>Traditional Cotton Saree</h3>
-        <p>₹1500</p>
-        <a href="product2.html" class="btn">View</a>
-        <button onclick="addToCart('Traditional Cotton Saree', 1500)" style="margin-top:8px; background:#8e44ad; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">
-            Add to Cart
-        </button>
-    </div>
-</div>
+        <div class="products">
+            <div class="product">
+                <img src="images/saree1.jpg" alt="Elegant Silk Saree">
+                <h3>Elegant Silk Saree</h3>
+                <p>₹2500</p>
+                <a href="product1.html" class="btn">View</a>
+                <button class="add-to-cart" onclick="addToCart('Elegant Silk Saree', 2500)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <img src="images/saree2.jpg" alt="Traditional Cotton Saree">
+                <h3>Traditional Cotton Saree</h3>
+                <p>₹1500</p>
+                <a href="product2.html" class="btn">View</a>
+                <button class="add-to-cart" onclick="addToCart('Traditional Cotton Saree', 1500)">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Kusum Collection. All rights reserved.</p>
     </footer>
+
+    <!-- Cart count and JS -->
+    <div style="position: fixed; top: 20px; right: 20px;">
+        🛒 Cart: <span id="cart-count">0</span>
+    </div>
+
+    <script>
+        let cartCount = 0;
+
+        // Function to update cart
+        function addToCart(productName, price) {
+            cartCount++;
+            document.getElementById("cart-count").innerText = cartCount;
+            alert(`${productName} added to cart!`);
+        }
+    </script>
 </body>
 </html>
-
