@@ -1,7 +1,6 @@
 // Initialize cart array from localStorage, or start with an empty array if none exists
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Function to add an item to the cart
 function addToCart(name, price) {
     cart.push({ name, price });
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -9,12 +8,17 @@ function addToCart(name, price) {
     alert(name + " added to cart 🛒");
 }
 
-// Function to update the cart count in the header
 function updateCartCount() {
     const countEl = document.getElementById("cart-count");
     if (countEl) {
         countEl.innerText = cart.length;
     }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+});
+
 }
 
 // Function to handle WhatsApp purchase
