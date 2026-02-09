@@ -93,10 +93,11 @@ nav ul li a {
     padding: 12px 30px;
     font-size: 1.1rem;
     background: #25D366;
-    color: white;
+    color: green;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    image: logo.png
 }
 
 /* Footer */
@@ -258,4 +259,5 @@ nav ul li a:hover::after {
         right: 20px;
     }
 }
+
 
