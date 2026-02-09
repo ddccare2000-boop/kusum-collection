@@ -1,37 +1,42 @@
+// cart.js
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price) {
-  cart.push({ name, price });
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-  alert(name + " added to cart");
+    cart.push({ name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert(name + " added to cart 🛒");
 }
 
 function updateCartCount() {
-  document.getElementById("cart-count").innerText = cart.length;
+    const countEl = document.getElementById("cart-count");
+    if (countEl) {
+        countEl.innerText = cart.length;
+    }
 }
 
 function buyOnWhatsApp() {
-  if (cart.length === 0) {
-    alert("Your cart is empty!");
-    return;
-  }
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
 
-  let message = "Hello, I want to order:%0A%0A";
-  let total = 0;
+    let message = "Hello Kusum Collection! I want to order:\n\n";
+    let total = 0;
 
-  cart.forEach((item, index) => {
-    message += `${index + 1}. ${item.name} - ₹${item.price}%0A`;
-    total += item.price;
-  });
+    cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name} — ₹${item.price}\n`;
+        total += Number(item.price);
+    });
 
-  message += `%0A*Total: ₹${total}*`;
+    message += `\n*Total: ₹${total}*\n\nThank you!`;
 
-  // 👉 CHANGE THIS NUMBER
-  let phoneNumber = "91xxxxxxxxxx"; // include country code
-
-  let whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-  window.location.href = whatsappURL;
+    const phoneNumber = "919784620776"; // ← your number without +
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, "_blank");
 }
 
-updateCartCount();
+// Run on every page load
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+});
