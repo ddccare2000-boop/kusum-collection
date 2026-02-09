@@ -124,3 +124,84 @@ footer {
         margin-bottom: 20px;
     }
 }
+/* Smooth global animation */
+body {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header hover polish */
+nav ul li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #8e44ad;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #8e44ad;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Product Image Animation */
+.product-image {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Buttons Animation */
+.btn,
+.whatsapp-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.btn:hover,
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    opacity: 0.95;
+}
+
+/* Product info entrance animation */
+.product-info {
+    animation: slideIn 0.8s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
