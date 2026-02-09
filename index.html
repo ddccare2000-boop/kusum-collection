@@ -15,10 +15,10 @@
 </a>
 
 <body>
-    <!-- Cart Display -->
-    <div style="position:fixed; top:20px; right:20px;">
-        🛒 Cart: <span id="cart-count">0</span>
-    </div>
+   <div class="cart-display" onclick="toggleCart()">
+    🛒 Cart: <span id="cart-count">0</span>
+</div>
+
 
     <div class="top-banner">
         ✨ Kusum Collection – Premium Handpicked Sarees ✨
@@ -98,6 +98,13 @@
             <p>Follow Us: Instagram | Facebook | Pinterest</p>
         </div>
     </footer>
+<!-- Cart Popup -->
+<div id="cart-popup" class="cart-popup">
+    <h3>Your Cart</h3>
+    <div id="cart-items"></div>
+    <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
+    <button onclick="checkoutWhatsApp()">Checkout on WhatsApp</button>
+</div>
 
     <!-- Scripts -->
     <script>
@@ -108,6 +115,52 @@
             cartCount.innerText = currentCount + 1;
             alert(productName + " added to cart!");
         }
+<script>
+    let cart = [];
+
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        updateCartCount();
+        alert(name + " added to cart 🛒");
+    }
+
+    function updateCartCount() {
+        document.getElementById("cart-count").innerText = cart.length;
+        renderCart();
+    }
+
+    function toggleCart() {
+        const popup = document.getElementById("cart-popup");
+        popup.style.display = popup.style.display === "block" ? "none" : "block";
+    }
+
+    function renderCart() {
+        const itemsEl = document.getElementById("cart-items");
+        const totalEl = document.getElementById("cart-total");
+
+        itemsEl.innerHTML = "";
+        let total = 0;
+
+        cart.forEach(item => {
+            itemsEl.innerHTML += `<p>${item.name} – ₹${item.price}</p>`;
+            total += item.price;
+        });
+
+        totalEl.innerText = total;
+    }
+
+    function checkoutWhatsApp() {
+        let msg = "Hello, I want to order:\n";
+        cart.forEach(i => {
+            msg += `• ${i.name} – ₹${i.price}\n`;
+        });
+
+        window.open(
+            "https://wa.me/919784620776?text=" + encodeURIComponent(msg),
+            "_blank"
+        );
+    }
+</script>
 
         // WhatsApp Buy Now function
         function buyOnWhatsApp() {
@@ -129,6 +182,7 @@
     <script src="cart.js"></script>
 </body>
 </html>
+
 
 
 
