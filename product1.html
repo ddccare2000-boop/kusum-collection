@@ -24,24 +24,21 @@
 </header>
 
 <section class="product-detail">
-    <div style="max-width: 900px; margin: 40px auto; padding: 20px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-        <img src="images/saree1.jpg" alt="Elegant Silk Saree" style="max-width: 450px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <div class="product-container">
+        <img src="images/saree1.jpg" alt="Elegant Silk Saree" class="product-image">
         
-        <div style="flex: 1; min-width: 300px;">
-            <h1 style="margin-bottom: 15px;">Elegant Silk Saree</h1>
-            <p style="font-size: 1.6rem; color: #c0392b; margin: 20px 0;">₹2500</p>
-            <p style="color: #555; line-height: 1.6; margin-bottom: 25px;">
+        <div class="product-info">
+            <h1>Elegant Silk Saree</h1>
+            <p class="price">₹2500</p>
+            <p class="product-description">
                 A beautiful silk saree with traditional designs perfect for weddings and festive occasions. Rich texture, excellent fall and shine.
             </p>
             
-            <button class="btn" 
-                    onclick="addToCart('Elegant Silk Saree', 2500)"
-                    style="padding: 12px 30px; font-size: 1.1rem; margin-right: 15px;">
+            <button class="btn" onclick="addToCart('Elegant Silk Saree', 2500)">
                 Add to Cart
             </button>
             
-            <button onclick="buyOnWhatsApp()" 
-                    style="padding: 12px 30px; font-size: 1.1rem; background: #25D366; color: white; border: none; border-radius: 6px; cursor: pointer;">
+            <button class="whatsapp-btn" onclick="buyOnWhatsApp()">
                 Buy Now on WhatsApp
             </button>
         </div>
