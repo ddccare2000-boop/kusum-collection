@@ -103,3 +103,15 @@ footer {
     text-align: center;
     font-size: 0.9rem;
 }
+.top-banner {
+    background: linear-gradient(90deg, #8b0000, #c0392b);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
