@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saree Boutique</title>
     <link rel="stylesheet" href="style.css">
-</head>
+</head> <div style="position:fixed; top:20px; right:20px;">
+  🛒 Cart: <span id="cart-count">0</span>
+</div>
+
 <body>
 <div class="top-banner">
     ✨ Kusum Collection – Premium Handpicked Sarees ✨
@@ -116,6 +119,7 @@ window.addEventListener("scroll", () => {
     });
 });
 </script>
+<script src="cart.js"></script>
 
 </body>
 </html>
@@ -123,6 +127,15 @@ window.addEventListener("scroll", () => {
     🛒 <span id="cart-count">0</span>
 </div>
 <div class="product-card fade-in">
+<h3>Elegant Silk Saree</h3>
+<p>Price: ₹2499</p>
+<button onclick="addToCart('Elegant Silk Saree', 2499)">
+  Add to Cart
+</button>
+<button onclick="buyOnWhatsApp()" style="padding:10px 20px; font-size:16px;">
+  Buy on WhatsApp
+</button>
+
 
 
 
