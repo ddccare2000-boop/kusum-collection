@@ -157,5 +157,15 @@ footer {
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
+@media (max-width: 768px) {
+    .hero {
+        height: 260px;
+    }
+
+    .hero-content h1 {
+        font-size: 22px;
+    }
+}
+
 
 
