@@ -8,14 +8,14 @@
 /* Hero */
 .hero {
     background: url('images/hero-bg.jpg') center/cover no-repeat;
-    height: 70vh;
+    height: 420px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
+    padding: 20px;
 }
-
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 10px;
@@ -156,5 +156,6 @@ footer {
     transform: translateY(-10px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
+
 
 
