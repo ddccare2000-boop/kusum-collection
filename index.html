@@ -93,11 +93,28 @@ document.getElementById("cart-count").innerText =
 <a href="https://wa.me/919784620776" target="_blank" class="whatsapp-float">
     <img src="images/whatsapp.png" alt="WhatsApp">
 </a>
+<a href="https://wa.me/919784620776" target="_blank" class="whatsapp-float">
+    <img src="images/whatsapp.png" alt="WhatsApp">
+</a>
+<script>
+const faders = document.querySelectorAll(".fade-in");
+
+window.addEventListener("scroll", () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add("show");
+        }
+    });
+});
+</script>
 
 </body>
 </html>
 <div class="cart-icon">
     🛒 <span id="cart-count">0</span>
 </div>
+<div class="product-card fade-in">
+
 
 
