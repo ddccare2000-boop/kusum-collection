@@ -10,6 +10,14 @@
 <div class="top-banner">
     ✨ Kusum Collection – Premium Handpicked Sarees ✨
 </div>
+<div class="product-card">
+    <img src="images/saree1.jpg" alt="Silk Saree">
+    <h4>Elegant Silk Saree</h4>
+    <p>₹2499</p>
+    <button class="btn" onclick="addToCart('Elegant Silk Saree', 2499)">
+        Add to Cart
+    </button>
+</div>
 
 <!-- Hero -->
 <section class="hero">
@@ -65,11 +73,31 @@
 <!-- Footer -->
 <footer>
     <div class="footer-content">
-        <p>Contact: +91 12345 67890 | Email: info@yoursareeboutique.com</p>
+        <p>Contact: +91 9784620776| Email: ddccare2000@gmail.com</p>
         <p>Follow Us: Instagram | Facebook | Pinterest</p>
     </div>
 </footer>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(name + " added to cart 🛒");
+}
+</script>
+<script>
+document.getElementById("cart-count").innerText =
+    JSON.parse(localStorage.getItem("cart"))?.length || 0;
+</script>
+<a href="https://wa.me/919784620776" target="_blank" class="whatsapp-float">
+    <img src="images/whatsapp.png" alt="WhatsApp">
+</a>
 
 </body>
 </html>
+<div class="cart-icon">
+    🛒 <span id="cart-count">0</span>
+</div>
+
 
