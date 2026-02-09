@@ -21,20 +21,27 @@
 
     <section class="shop">
         <h2>All Sarees</h2>
-        <div class="products">
-            <div class="product">
-                <img src="images/saree1.jpg" alt="Saree 1">
-                <h3>Elegant Silk Saree</h3>
-                <p>₹2500</p>
-                <a href="product1.html" class="btn">View</a>
-            </div>
-            <div class="product">
-                <img src="images/saree2.jpg" alt="Saree 2">
-                <h3>Traditional Cotton Saree</h3>
-                <p>₹1500</p>
-                <a href="product2.html" class="btn">View</a>
-            </div>
-        </div>
+       <div class="products">
+    <div class="product">
+        <img src="images/saree1.jpg" alt="Saree 1">
+        <h3>Elegant Silk Saree</h3>
+        <p>₹2500</p>
+        <a href="product1.html" class="btn">View</a>
+        <button onclick="addToCart('Elegant Silk Saree', 2500)" style="margin-top:8px; background:#8e44ad; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">
+            Add to Cart
+        </button>
+    </div>
+    
+    <div class="product">
+        <img src="images/saree2.jpg" alt="Saree 2">
+        <h3>Traditional Cotton Saree</h3>
+        <p>₹1500</p>
+        <a href="product2.html" class="btn">View</a>
+        <button onclick="addToCart('Traditional Cotton Saree', 1500)" style="margin-top:8px; background:#8e44ad; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">
+            Add to Cart
+        </button>
+    </div>
+</div>
     </section>
 
     <footer>
@@ -42,3 +49,4 @@
     </footer>
 </body>
 </html>
+
